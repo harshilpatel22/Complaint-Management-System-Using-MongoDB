@@ -1,0 +1,1 @@
+var curLocation = window.location.href;
