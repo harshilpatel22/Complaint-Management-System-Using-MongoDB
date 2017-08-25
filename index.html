@@ -4,6 +4,7 @@
     <title>Simple Review</title>
 
     <script type="text/javascript">
+
     </script>
 
     <style>
@@ -12,16 +13,55 @@
             padding: 0;
         }
         html {
-            
+            font-size: 28px;
+        }
+        div, p, h1 {
+            margin: 40px 0;
         }
         #container { 
             margin: 0 auto;
             width: 80%;
         }
         .button {
-            padding: 30px;
-            color: #fff;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 40%;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
         }
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        .button:hover {
+            box-shadow: 3px 3px 10px #99a0ab;
+            transition: 0.5s;
+        }
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        
         .good {
             background: green;
         }
@@ -32,12 +72,13 @@
 </head>
 <body>
     <div id="container">
-        <p>Leave a Review - Step 1</p>
+        <h1>Leave a Review</h1>
  
-        <p>Hello Elijah! Thanks for visiting. How would you rate our service?</p>
+        <p>Hello <span id="userName"></span> Thanks for visiting. How would you rate our service?</p>
+
         <div>
-            <span class="button good">Good</span>
-            <span class="button bad">Bad</span>
+            <button class="button good"><span>Good </span></button>
+            <button class="button bad"><span>Bad </span></button>
         </div>
     </div>
 
