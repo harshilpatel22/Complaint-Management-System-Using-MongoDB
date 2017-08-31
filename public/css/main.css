@@ -9,6 +9,12 @@ html {
 p, h1 {
     margin: 40px 0;
 }
+textarea {
+    width: 95%;
+    border: solid #9f9f9f 1px;
+    padding: 10px;
+}
+
 #header {
     margin: 0 auto;
     padding: 30px;

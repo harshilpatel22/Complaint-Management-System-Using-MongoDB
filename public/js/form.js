@@ -24,5 +24,9 @@ document.getElementsByClassName("good")[0].onclick = function(){
 };
 
 document.getElementsByClassName("bad")[0].onclick = function(){
-    console.log("bad stuff");
+    document.getElementById("container").innerHTML = "<h1>We're sorry to hear that!</h1><div id='sorry'>Please tell us what we can do better:</div>";
+
+    var sorry = document.getElementById("sorry");
+
+    sorry.innerHTML = sorry.innerHTML + "<div><textarea name='review' class='form-control' placeholder='Enter you review here...' rows='5'></textarea></div>";
 };
