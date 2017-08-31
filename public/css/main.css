@@ -5,10 +5,14 @@
 html {
     font-size: 28px;
     background: #D5D8DB;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 p, h1 {
     margin: 40px 0;
+}
+#header {
+    margin: 0 auto;
+    padding: 30px;
+    width: 80%;
 }
 #container { 
     margin: 0 auto;
@@ -54,11 +58,4 @@ p, h1 {
 .button:hover span:after {
     opacity: 1;
     right: 0;
-}
-
-.good {
-    background: green;
-}
-.bad {
-    background: red;
 }
