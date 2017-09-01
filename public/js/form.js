@@ -17,7 +17,7 @@ document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl
     var parseURI = window.location.href.split(/[?]/g)[1];
     parseURI = parseURI.split("&");
 
-    for (i=0; i <= parseURI.length; i++) {
+    for (i=0; i < parseURI.length; i++) {
         var tempVar = parseURI[i].split(/[=]/g);
         smplReview.variables[tempVar[0]] = tempVar[1];
     }
