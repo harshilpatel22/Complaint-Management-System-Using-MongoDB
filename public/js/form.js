@@ -15,12 +15,15 @@ document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl
 //Pull in any varialbes passed to this page
 (function(){   
     var parseURI = window.location.href.split(/[?]/g)[1];
-    parseURI = parseURI.split("&");
 
-    for (i=0; i < parseURI.length; i++) {
-        var tempVar = parseURI[i].split(/[=]/g);
-        smplReview.variables[tempVar[0]] = tempVar[1];
-    }
+    if (parseURI != undefined) {
+        parseURI = parseURI.split("&");
+        
+        for (i=0; i < parseURI.length; i++) {
+            var tempVar = parseURI[i].split(/[=]/g);
+            smplReview.variables[tempVar[0]] = tempVar[1];
+        }
+    };
 })();
 
 //Button actions
