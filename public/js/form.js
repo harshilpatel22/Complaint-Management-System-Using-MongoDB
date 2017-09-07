@@ -28,7 +28,7 @@ var reviewAction = function(type) {
     
         var sorry = document.getElementById("sorry");
     
-        sorry.innerHTML = sorry.innerHTML + "<div><textarea name='review' class='form-control' placeholder='Enter you review here...' rows='5'></textarea></div>";
+        sorry.innerHTML = sorry.innerHTML + "<form action='https://www.skmotorsport.com/mailReview.php' name='review' method='get'><div><textarea name='review' class='form-control' placeholder='Enter you review here...' rows='5'></textarea></div><input type='submit' name='submit' value='Submit'></form>";
     };
 };
 
