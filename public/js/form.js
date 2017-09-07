@@ -6,13 +6,23 @@ smplReview = {
     clientLogo: "https://www.skmotorsport.com/wp-content/themes/skmotorsport2/images/skmotorsportlogo.png",
     clientUrl: "https://www.skmotorsport.com",
     variables: {
-    }
+    },
+    ratingFloor: 4
 }
 
 //Page styling
 document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl + "'><img src='" + smplReview.clientLogo + "' /></a>";
 
-//Pull in any varialbes passed to this page
+//Function to handle reviews.
+var reviewHandler = function() {
+    if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
+        console.log("poor review");
+    } else {
+        console.log("good review");
+    }
+};
+
+//Pull in any variables passed to this page
 (function(){   
     var parseURI = window.location.href.split(/[?]/g)[1];
 
@@ -23,6 +33,8 @@ document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl
             var tempVar = parseURI[i].split(/[=]/g);
             smplReview.variables[tempVar[0]] = tempVar[1];
         }
+        
+        reviewHandler();
     };
 })();
 
