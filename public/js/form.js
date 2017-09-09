@@ -3,7 +3,6 @@ smplReview = {
     reviewSites: [
         "https://www.google.com/search?q=SK+Motorsport,+1999+Iowa+St,+Bellingham,+WA+98229&ludocid=2572613230962149428#lrd=0x5485a38bea214067:0x23b3c21a6ff80834,3"
     ],
-    clientLogo: "https://www.skmotorsport.com/wp-content/themes/skmotorsport2/images/skmotorsportlogo.png",
     clientUrl: "https://www.skmotorsport.com",
     variables: {
     },
@@ -28,7 +27,7 @@ smplReview = {
 })();
 
 //Page styling
-document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl + "'><img src='" + smplReview.clientLogo + "' /></a>";
+document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl + "'><div id=\"logo\"></div></a>";
 
 var reviewAction = function(type) {
     if (type === "good") {

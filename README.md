@@ -11,6 +11,9 @@ When a user selects a poor review before seeing your smplReview page, for instan
 
 Review sites will soon have the ability to be weighted so the most important ones get the highest priority.
 
+<b>Themed</b><br>
+Easily customize the appeareance to match your site by adjusting the logo and theme via the theme.css file.  
+
 ## ToDo
 * <b>Finish:</b> Create stars for rating system.  
 * <b>Add:</b> Add ability to set weights to review sites so site A can appear more then site B.

@@ -5,6 +5,11 @@ html {
 #header {
     background: #27272e;
 }
+#logo {
+    background: url("https://skmotorsport.com/wp-content/themes/skmotorsport2/images/skmotorsportlogo.png") no-repeat;
+    height: 75px;
+    width: 100%;
+}
 
 /* Buttons */
 .good {
