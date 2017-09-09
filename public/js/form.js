@@ -9,7 +9,8 @@ smplReview = {
     },
     ratingFloor: 4,
     ratingSendToForm: true,
-    ratingStars: false
+    ratingStars: false,
+    debug: true
 };
 
 //Pull in any variables passed to this page via this anonymous function.  This should be the first thing that is run to make sure 
