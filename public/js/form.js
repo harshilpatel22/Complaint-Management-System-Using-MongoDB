@@ -49,6 +49,12 @@ var reviewAction = function(type) {
 //Add in appropriate rating method based on configuration
 if(smplReview.ratingStars === true) {
     document.getElementById("smplRating").innerHTML = "Stars go here";
+    
+    if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
+        if (smplReview.ratingSendToForm === true) {
+            reviewAction("bad");
+        }
+    }
 } else {
     document.getElementById("smplRating").innerHTML = "<button class=\"button good\"><span>Good </span></button><button class=\"button bad\"><span>Bad </span></button>";
 
