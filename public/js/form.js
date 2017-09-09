@@ -24,6 +24,10 @@ smplReview = {
             smplReview.variables[tempVar[0]] = tempVar[1];
         }
     };
+
+    if (smplReview.variables.name != undefined) {
+        document.getElementById("userName").innerHTML = " " + smplReview.variables.name;
+    }
 })();
 
 //Page styling
