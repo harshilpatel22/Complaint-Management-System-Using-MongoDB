@@ -24,17 +24,6 @@ smplReview = {
             smplReview.variables[tempVar[0]] = tempVar[1];
         }
     };
-
-    //Function to handle reviews.
-    (function() {
-        if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
-            if (smplReview.ratingSendToForm === true) {
-                smplReview.variables.rating = "1";
-            }
-        } else {
-            console.log("good review");
-        }
-    })();
 })();
 
 //Page styling
@@ -70,5 +59,10 @@ if(smplReview.ratingStars === true) {
     document.getElementsByClassName("bad")[0].onclick =  function(){
         reviewAction("bad");
     };
-}
 
+    if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
+        if (smplReview.ratingSendToForm === true) {
+            reviewAction("bad");
+        }
+    }
+};
