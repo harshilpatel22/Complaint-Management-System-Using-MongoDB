@@ -25,8 +25,16 @@ smplReview = {
         }
     };
 
-    //removed reviewhandler function call as it shouldn't be inside the parse area.
-
+    //Function to handle reviews.
+    (function() {
+        if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
+            if (smplReview.ratingSendToForm === true) {
+                smplReview.variables.rating = "1";
+            }
+        } else {
+            console.log("good review");
+        }
+    })();
 })();
 
 //Page styling
@@ -64,13 +72,3 @@ if(smplReview.ratingStars === true) {
     };
 }
 
-//Function to handle reviews.
-var reviewHandler = function() {
-    if (smplReview.variables.rating != undefined && smplReview.ratingFloor > smplReview.variables.rating) {
-        if (smplReview.ratingSendToForm === true) {
-            reviewAction("bad");
-        }
-    } else {
-        console.log("good review");
-    }
-};
