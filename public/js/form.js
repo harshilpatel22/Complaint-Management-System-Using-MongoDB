@@ -10,7 +10,24 @@ smplReview = {
     ratingFloor: 4,
     ratingSendToForm: true,
     ratingStars: false
-}
+};
+
+//Pull in any variables passed to this page via this anonymous function.  This should be the first thing that is run to make sure 
+(function(){   
+    var parseURI = window.location.href.split(/[?]/g)[1];
+
+    if (parseURI != undefined) {
+        parseURI = parseURI.split("&");
+        
+        for (i=0; i < parseURI.length; i++) {
+            var tempVar = parseURI[i].split(/[=]/g);
+            smplReview.variables[tempVar[0]] = tempVar[1];
+        }
+    };
+
+    //removed reviewhandler function call as it shouldn't be inside the parse area.
+
+})();
 
 //Page styling
 document.getElementById("header").innerHTML = "<a href='" + smplReview.clientUrl + "'><img src='" + smplReview.clientLogo + "' /></a>";
@@ -32,13 +49,20 @@ var reviewAction = function(type) {
     };
 };
 
-//Button actions
-document.getElementsByClassName("good")[0].onclick = function(){
-    reviewAction("good");
-};
-document.getElementsByClassName("bad")[0].onclick =  function(){
-    reviewAction("bad");
-};
+//Add in appropriate rating method based on configuration
+if(smplReview.ratingStars === true) {
+    document.getElementById("smplRating").innerHTML = "Stars go here";
+} else {
+    document.getElementById("smplRating").innerHTML = "<button class=\"button good\"><span>Good </span></button><button class=\"button bad\"><span>Bad </span></button>";
+
+    //Button actions
+    document.getElementsByClassName("good")[0].onclick = function(){
+        reviewAction("good");
+    };
+    document.getElementsByClassName("bad")[0].onclick =  function(){
+        reviewAction("bad");
+    };
+}
 
 //Function to handle reviews.
 var reviewHandler = function() {
@@ -50,19 +74,3 @@ var reviewHandler = function() {
         console.log("good review");
     }
 };
-
-//Pull in any variables passed to this page via this anonymous function
-(function(){   
-    var parseURI = window.location.href.split(/[?]/g)[1];
-
-    if (parseURI != undefined) {
-        parseURI = parseURI.split("&");
-        
-        for (i=0; i < parseURI.length; i++) {
-            var tempVar = parseURI[i].split(/[=]/g);
-            smplReview.variables[tempVar[0]] = tempVar[1];
-        }
-    };
-        
-    reviewHandler();
-})();
