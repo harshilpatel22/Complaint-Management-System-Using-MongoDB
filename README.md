@@ -14,7 +14,21 @@ Review sites will soon have the ability to be weighted so the most important one
 <b>Themed</b><br>
 Easily customize the appeareance to match your site by adjusting the logo and theme via the theme.css file.  
 
-## ToDo
+## Usage
+The index page can be used as an example of how to deploy smplReview or as the actual review page.  If you're going to be using it as an example page simply upload all the files minus the theme.css file in the public folder and link to them in your page.  Next add the following to your page...
+
+```html
+<p>Hello<span id="userName"></span>, thanks for visiting. How would you rate our service?</p>
+
+<div id="smplRating">
+</div>
+```
+
+The first part is optional while the smplRating is where the forms and buttons will be injected. 
+
+The theme.css is the only file that doesn't if you're deploying to your own page.  If you're deploying the index file as the actual review page then you should include it in your deployment as it will be where you control the pages styling.
+
+### ToDo
 * <b>Finish:</b> Create stars for rating system.  
 * <b>Add:</b> Add ability to set weights to review sites so site A can appear more then site B.
 * <b>Add:</b> Cookies to prevent users from selecting a negative review and refreshing the page in order to access the positive review button.  
