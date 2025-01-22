@@ -1,34 +1,77 @@
-# smplReview
-Simple customer review form that allows you to move customers with complaints to your internal reply system and happy customers to a review of your choice.
+# Complaint Management System
 
-<b>Configurable rating system</b><br>
-smplReview allows you to use simple Good & Bad ratings or allows for a more fine tuned star based approach.  
+A web-based **Complaint Management System** built using **Node.js**, **Express.js**, and **MongoDB** as the backend database. 
+This application allows users to register, log in, and submit complaints, which are stored securely in a MongoDB database.
 
-<b>Set your own review floor & list as many review sites as you want</b><br>
-You can set a floor for reviews so you can help insure only highly happy customers are sent to your review sites.  By default I suggest setting it to 4 so users that rate you 3 or less are automatically sent to your email so you can rectify the situation without being dinged online. 
+---
 
-When a user selects a poor review before seeing your smplReview page, for instance in an email you can enable automatic hiding of the review options all together to help remove the possibility of them clicking a positive review in order to get to a review site.
+## Features
 
-Review sites will soon have the ability to be weighted so the most important ones get the highest priority.
+- **User Authentication**: Users can sign up and log in securely using hashed passwords.
+- **Complaint Submission**: Authenticated users can submit complaints with a unique complaint number.
+- **Session Management**: Secure session handling using `express-session`.
+- **MongoDB Integration**: Complaints and user data are stored in a MongoDB Atlas database.
 
-<b>Themed</b><br>
-Easily customize the appeareance to match your site by adjusting the logo and theme via the theme.css file.  
+---
+
+## Technologies Used
+
+- **Node.js**: JavaScript runtime environment.
+- **Express.js**: Backend framework for creating server-side applications.
+- **MongoDB Atlas**: Cloud-based NoSQL database for storing user and complaint data.
+- **bcrypt**: For securely hashing passwords.
+- **express-session**: Session management for user authentication.
+
+---
+
+## Installation
+
+1. Clone the repository:
+   git clone https://github.com/yourusername/complaint-management-system.git
+   cd complaint-management-system
+2. Install the required dependencies
+3. Set up the MongoDB Atlas connection:
+    Update the uri variable in nodeServer.js with your MongoDB Atlas connection string.
+4. Start the server using - node nodeServer.js
 
 ## Usage
-The index page can be used as an example of how to deploy smplReview or as the actual review page.  If you're going to be using it as an example page simply upload all the files minus the theme.css file in the public folder and link to them in your page.  Next add the following to your page...
 
-```html
-<p>Hello<span id="userName"></span>, thanks for visiting. How would you rate our service?</p>
+**User Authentication**
+  Signup: Users can register with a unique username and password.
+  Login: Registered users can log in to access the complaint submission form.
+**Complaint Submission**
+  Users can submit complaints by filling out the form with:
+    Registration ID
+    Complaint Type
+    Complaint Text
+    Each complaint is assigned a unique complaint number.
+**Complaint Storage**
+  Complaints are stored in the MongoDB database with a timestamp and associated user details.
 
-<div id="smplRating">
-</div>
-```
+## Setting Up MongoDB Atlas with VS Code
+Follow these steps to configure MongoDB Atlas for use with VS Code in this project:
 
-The first part is optional while the smplRating is where the forms and buttons will be injected. 
-
-The theme.css is the only file that doesn't if you're deploying to your own page.  If you're deploying the index file as the actual review page then you should include it in your deployment as it will be where you control the pages styling.
-
-### ToDo
-* <b>Finish:</b> Create stars for rating system.  
-* <b>Add:</b> Add ability to set weights to review sites so site A can appear more then site B.
-* <b>Add:</b> Cookies to prevent users from selecting a negative review and refreshing the page in order to access the positive review button.  
+  1. Create a MongoDB Atlas Account
+    Visit MongoDB Atlas and create a free account.
+  2. Create a Cluster
+    After logging in, create a new cluster.
+    Choose a free tier cluster and select your preferred cloud provider and region.
+  3. Connect to the Cluster
+    Once the cluster is created, click on the "Connect" button.
+    Choose "Connect your application" and copy the connection string. Example:
+      mongodb+srv://<username>:<password>@clustername.mongodb.net/<dbname>?retryWrites=true&w=majority
+  4. Replace Credentials
+    Replace <username>, <password>, and <dbname> in the connection string with:
+      Your MongoDB Atlas username and password.
+      The name of your database (e.g., complaintsDB).
+  5. Paste the URI into the Project
+    Open the nodeServer.js file.
+    Update the uri variable with your MongoDB Atlas connection string:
+      const uri = 'mongodb+srv://<username>:<password>@clustername.mongodb.net/complaintsDB?retryWrites=true&w=majority';
+  6. Install the MongoDB Extension for VS Code
+    In VS Code, go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on macOS).
+    Search for "MongoDB for VS Code" and install it.
+  7. Connect VS Code to MongoDB Atlas
+    Open the MongoDB tab in VS Code (look for the leaf icon in the Activity Bar).
+    Click "Add Connection" and paste your MongoDB Atlas connection string.
+    You can now view and manage your database directly from VS Code.
