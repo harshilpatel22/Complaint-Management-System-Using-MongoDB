@@ -37,41 +37,54 @@ This application allows users to register, log in, and submit complaints, which 
 ## Usage
 
 **User Authentication**
-  Signup: Users can register with a unique username and password.
-  Login: Registered users can log in to access the complaint submission form.
+
+  1. Signup: Users can register with a unique username and password.
+  2. Login: Registered users can log in to access the complaint submission form.
+
 **Complaint Submission**
+
   Users can submit complaints by filling out the form with:
+  
     1. Registration ID
     2. Complaint Type
     3. Complaint Text
     4. Each complaint is assigned a unique complaint number.
+    
 **Complaint Storage**
+
   Complaints are stored in the MongoDB database with a timestamp and associated user details.
 
 ## Setting Up MongoDB Atlas with VS Code
+
 Follow these steps to configure MongoDB Atlas for use with VS Code in this project:
 
   1. Create a MongoDB Atlas Account
     Visit MongoDB Atlas and create a free account.
+
   2. Create a Cluster
     1. After logging in, create a new cluster.
     2. Choose a free tier cluster and select your preferred cloud provider and region.
-  3. Connect to the Cluster
+     
+  4. Connect to the Cluster
     1. Once the cluster is created, click on the "Connect" button.
     2. Choose "Connect your application" and copy the connection string. Example:
          mongodb+srv://<username>:<password>@clustername.mongodb.net/<dbname>?retryWrites=true&w=majority
-  4. Replace Credentials
+     
+  5. Replace Credentials
      Replace <username>, <password>, and <dbname> in the connection string with:
       1. Your MongoDB Atlas username and password.
       2. The name of your database (e.g., complaintsDB).
-  5. Paste the URI into the Project
+
+  6. Paste the URI into the Project
     1. Open the nodeServer.js file.
     2. Update the uri variable with your MongoDB Atlas connection string:
       const uri = 'mongodb+srv://<username>:<password>@clustername.mongodb.net/complaintsDB?retryWrites=true&w=majority';
-  6. Install the MongoDB Extension for VS Code
+     
+  7. Install the MongoDB Extension for VS Code
     1. In VS Code, go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on macOS).
     2. Search for "MongoDB for VS Code" and install it.
-  7. Connect VS Code to MongoDB Atlas
+      
+  8. Connect VS Code to MongoDB Atlas
     1. Open the MongoDB tab in VS Code (look for the leaf icon in the Activity Bar).
     2. Click "Add Connection" and paste your MongoDB Atlas connection string.
     You can now view and manage your database directly from VS Code.
