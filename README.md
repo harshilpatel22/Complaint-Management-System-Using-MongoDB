@@ -27,12 +27,14 @@ This application allows users to register, log in, and submit complaints, which 
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/complaint-management-system.git
-   cd complaint-management-system
-2. Install the required dependencies
-3. Set up the MongoDB Atlas connection:
+
+   1. git clone https://github.com/yourusername/complaint-management-system.git
+   2. cd complaint-management-system
+   
+4. Install the required dependencies
+5. Set up the MongoDB Atlas connection:
     Update the uri variable in nodeServer.js with your MongoDB Atlas connection string.
-4. Start the server using - node nodeServer.js
+6. Start the server using - node nodeServer.js
 
 ## Usage
 
