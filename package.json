@@ -2,6 +2,9 @@
     "name": "express-html",
     "version": "0.0.1",
     "dependencies": {
-        "express": "^4.11.0"
+        "bcrypt": "^5.1.1",
+        "express": "^4.21.1",
+        "express-session": "^1.18.1",
+        "mongoose": "^8.8.0"
     }
 }

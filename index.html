@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Review</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/public/css/theme.css" />
+    <title>VIT Complaint Management System</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="theme.css" />
 </head>
 <body>
-    <div id="header">
+    <div id="headerS">
+        <img src="im.jpg" alt="VIT Logo" class="logo">
+        <h1>COMPLAINT MANAGEMENT SYSTEM</h1>
     </div>
     <div id="container">
-        <h1>Leave a Review</h1>
- 
-        <p>Hello<span id="userName"></span>, thanks for visiting. How would you rate our service?</p>
-
-        <div id="smplRating">
-        </div>
+        <h2>Submit Your Complaint</h2>
+        <form action="/submit-complaint" method="POST">
+            <label for="registrationId">Registration ID:</label>
+            <input type="text" id="registrationId" name="registrationId" required />
+        
+            <label for="complaintType">Type of Complaint:</label>
+            <select id="complaintType" name="type" required> <!-- name="type" to match server -->
+                <option value="Hostel">Hostel Complaint</option>
+                <option value="Educational">Educational Complaint</option>
+                <option value="Faculty">Faculty Complaint</option>
+                <option value="Other">Other</option>
+            </select>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="complaintText" rows="5" required></textarea> <!-- name="complaintText" to match server -->
+        
+            <button type="submit">Submit Complaint</button>
+        </form>
+        
     </div>
-
-    <script type="text/javascript" src="public/js/form.js"> </script>
-
+    <div id="footer">
+        <p>&copy; 2024 Vellore Institute of Technology. All rights reserved.</p>
+    </div>
 </body>
 </html>
